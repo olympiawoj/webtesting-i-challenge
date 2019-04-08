@@ -1,0 +1,14 @@
+{
+  "name": "webtesting-i-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/olympiawoj/webtesting-i-challenge.git",
+  "author": "olympia <owojcik7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch --verbose"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
