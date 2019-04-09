@@ -30,9 +30,11 @@ describe("fail", () => {
   });
 
   it("if enhancement is >=15, it should decrease durability by 10", () => {
-    expect(enhancer.fail(item1)).toHaveProperty("durability", -10);
+    const item = { name: "item", durability: 20, enhancement: 20 };
+    expect(enhancer.fail(item)).toHaveProperty("durability", 10);
   });
-  //   it("if enhancement > 16, it should reduce enhancement by 1", () => {
-  //     expect(enhancer.fail(item1)).toHaveProperty("enhancement", 19);
-  //   });
+  it("if enhancement > 16, it should reduce enhancement by 1", () => {
+    const item = { name: "item", durability: 20, enhancement: 20 };
+    expect(enhancer.fail(item)).toHaveProperty("enhancement", 19);
+  });
 });

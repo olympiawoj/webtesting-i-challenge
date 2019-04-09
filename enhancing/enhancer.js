@@ -16,13 +16,16 @@ function succeed(item) {
 
 function fail(item) {
   let { name, enhancement, durability } = item;
-  enhancement < 15
-    ? (durability -= 5)
-    : enhancement >= 15
-    ? (durability -= 10)
-    : enhancement > 16
-    ? (enhancement -= 1)
-    : null;
+
+  if (enhancement > 16) {
+    enhancement -= 1;
+    durability -= 10;
+  } else if (enhancement >= 15) {
+    durability -= 10;
+  } else if (enhancement < 15) {
+    durability -= 5;
+  }
+
   item.durability = durability;
   item.enhancement = enhancement;
   return { ...item };
